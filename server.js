@@ -14,8 +14,8 @@ import path from "path";
 dotenv.config();
 // database config
 connectDb();
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = path.dirname(__filename);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const app = express();
 // middleware
 app.use(express.json({ limit: "500mb" }));
