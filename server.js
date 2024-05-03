@@ -21,7 +21,7 @@ const app = express();
 app.use(express.json({ limit: "500mb" }));
 app.use(morgan("dev"));
 // Serve static files from the client build directory
-app.use(express.static(path.join(__dirname, " ./client/build")));
+app.use(express.static(path.join(__dirname, " ./client/public")));
 app.use(cors());
 
 // route
@@ -35,7 +35,7 @@ app.get("/", (req, res) => {
 
 // Fallback for all other requests to serve the index.html
 app.use("*", function (req, res) {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+  res.sendFile(path.join(__dirname, "./client/public/index.html"));
 });
 // port
 const PORT = process.env.PORT || 8000;
