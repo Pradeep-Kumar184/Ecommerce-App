@@ -20,6 +20,8 @@ const app = express();
 // middleware
 app.use(express.json({ limit: "500mb" }));
 app.use(morgan("dev"));
+// Serve static files from the client build directory
+app.use(express.static(path.join(__dirname, " ./client/build")));
 app.use(cors());
 
 // route
@@ -31,8 +33,6 @@ app.get("/", (req, res) => {
   res.send("welcome to eCommerce app");
 });
 
-// Serve static files from the client build directory
-app.use(express.static(path.join(__dirname, " ./client/build")));
 // Fallback for all other requests to serve the index.html
 app.use("*", function (req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
