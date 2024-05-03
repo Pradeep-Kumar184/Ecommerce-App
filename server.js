@@ -8,7 +8,7 @@ import cors from "cors";
 import categoryRoute from "./routes/categoryRoute.js";
 import productRoute from "./routes/productRoute.js";
 import path from "path";
-// import { fileURLToPath } from "url";
+import { fileURLToPath } from "url";
 
 // config dotenv
 dotenv.config();
