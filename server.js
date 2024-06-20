@@ -36,7 +36,7 @@ app.use("*", function (req, res) {
   res.sendFile(path.join(__dirname, "./client/public/index.html"));
 });
 // port
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 10000;
 app.listen(PORT, () => {
   console.log(`server is running on port ${PORT}`.bgCyan.yellow);
 });
