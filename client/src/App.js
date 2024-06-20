@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route ,Navigate } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -30,8 +30,9 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Home />}></Route>
-
+        
+ <Route path="/preload" element={<Home />} />
+        <Route path="/" element={<Navigate to="/preload" replace />} />
         <Route path="/categories" element={<Categories />}></Route>
         <Route path="/category/:slug" element={<CategoryProduct />}></Route>
         <Route path="/cart" element={<CartPage />}></Route>
